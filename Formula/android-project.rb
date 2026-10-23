@@ -1,8 +1,8 @@
 class AndroidProject < Formula
   desc "Independent Android and Gradle project system"
   homepage "https://github.com/cat-emacs/android-project"
-  url "https://github.com/cat-emacs/android-project/releases/download/v0.1.0/android-project-0.1.0.tar.gz"
-  sha256 "955aecf723d3b368351cdfa270d85fbb3a16a92371fb60bde1812fdbe1e68f9d"
+  url "https://github.com/cat-emacs/android-project/releases/download/v0.1.1/android-project-0.1.1.tar.gz"
+  sha256 "1756fcc26e09f8f9fbd6b135edb17a503dea7795e5444392ec3457fb5766e711"
   license "GPL-3.0-or-later"
 
   depends_on "openjdk"
