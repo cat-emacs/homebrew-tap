@@ -1,0 +1,20 @@
+name: Formula tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Homebrew/actions/setup-homebrew@master
+      - name: Install from checked out tap
+        run: |
+          brew tap --custom-remote cat-emacs/tap "$GITHUB_WORKSPACE"
+          brew install cat-emacs/tap/android-project cat-emacs/tap/compose-preview
+          brew test cat-emacs/tap/android-project
+          brew test cat-emacs/tap/compose-preview
