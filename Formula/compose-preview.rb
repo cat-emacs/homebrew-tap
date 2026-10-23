@@ -5,11 +5,11 @@ class ComposePreview < Formula
   sha256 "4f0a51d35460bbcf97aa2d5bfe92adea059b4e07dc22fd464c30531bf8af60a5"
   license "GPL-3.0-or-later"
 
-  depends_on "openjdk@17"
+  depends_on "openjdk"
 
   def install
     libexec.install Dir["*"]
-    (bin/"compose-preview").write_env_script libexec/"bin/compose-preview", Language::Java.overridable_java_home_env("17")
+    (bin/"compose-preview").write_env_script libexec/"bin/compose-preview", Language::Java.overridable_java_home_env
   end
 
   test do

@@ -5,11 +5,11 @@ class AndroidProject < Formula
   sha256 "955aecf723d3b368351cdfa270d85fbb3a16a92371fb60bde1812fdbe1e68f9d"
   license "GPL-3.0-or-later"
 
-  depends_on "openjdk@17"
+  depends_on "openjdk"
 
   def install
     libexec.install Dir["*"]
-    (bin/"android-project").write_env_script libexec/"bin/android-project", Language::Java.overridable_java_home_env("17")
+    (bin/"android-project").write_env_script libexec/"bin/android-project", Language::Java.overridable_java_home_env
   end
 
   test do

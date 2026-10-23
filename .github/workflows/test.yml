@@ -18,3 +18,13 @@ jobs:
           brew install cat-emacs/tap/android-project cat-emacs/tap/compose-preview
           brew test cat-emacs/tap/android-project
           brew test cat-emacs/tap/compose-preview
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Respect an explicitly selected JDK
+        run: |
+          for cli in android-project compose-preview; do
+            "$cli" doctor --json > "$RUNNER_TEMP/$cli.json"
+            python3 -c 'import json,sys; v=json.load(open(sys.argv[1]))["javaVersion"]; assert v == "17" or v.startswith("17."), v' "$RUNNER_TEMP/$cli.json"
+          done
