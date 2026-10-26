@@ -1,8 +1,8 @@
 class ComposePreview < Formula
   desc "Compose Preview rendering with the standalone layoutlib renderer"
   homepage "https://github.com/cat-emacs/compose-preview"
-  url "https://github.com/cat-emacs/compose-preview/releases/download/v0.1.3/compose-preview-0.1.3.tar.gz"
-  sha256 "31e4bf8a825b3b9e6b87b898ca8728e8b225ba4fe1070a56936eb0af14889537"
+  url "https://github.com/cat-emacs/compose-preview/releases/download/v0.1.4/compose-preview-0.1.4.tar.gz"
+  sha256 "12da7c65abee64372e54386bbe1f9ed3dacca2c06354f572cfd3a2fe5eef426b"
   license "GPL-3.0-or-later"
 
   depends_on "openjdk"
