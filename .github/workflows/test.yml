@@ -21,10 +21,10 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '21'
       - name: Respect an explicitly selected JDK
         run: |
           for cli in android-project compose-preview; do
             "$cli" doctor --json > "$RUNNER_TEMP/$cli.json"
-            python3 -c 'import json,sys; v=json.load(open(sys.argv[1]))["javaVersion"]; assert v == "17" or v.startswith("17."), v' "$RUNNER_TEMP/$cli.json"
+            python3 -c 'import json,sys; v=json.load(open(sys.argv[1]))["javaVersion"]; assert v == "21" or v.startswith("21."), v' "$RUNNER_TEMP/$cli.json"
           done

@@ -1,6 +1,7 @@
 # Cat Emacs Homebrew tap
 
-Portable JDK 17+ CLIs for macOS and Linux.
+Portable JVM CLIs for macOS and Linux: Android Project requires JDK 17+;
+Compose Preview requires JDK 21+.
 
 ```sh
 brew install cat-emacs/tap/android-project
@@ -14,13 +15,14 @@ installation instead of adding `openjdk@17`. An explicit `JAVA_HOME` takes
 precedence, including SDKMAN-selected JDKs:
 
 ```sh
-sdk use java <your-installed-java-17-identifier>
+sdk use java <your-installed-java-21-identifier>
 android-project doctor --json
 compose-preview doctor --json
 ```
 
-The CLI requires Java 17 or newer; Gradle/AGP and rendering may require a specific
-compatible JDK. Latest OpenJDK launcher checks do not imply all project builds
+Preview CLI/renderer use Java 21 or newer. Project Gradle builds may use a
+different compatible JDK through existing project JVM policy or Preview's
+`--gradle-java-home` option. Latest OpenJDK launcher checks do not imply all project builds
 support that JDK. Runtime dependencies are included in the release archive;
 GitHub Packages credentials are not needed.
 
